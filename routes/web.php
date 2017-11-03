@@ -29,3 +29,5 @@ Route::get('displayMessages', 'messagesController@getMessages');
 Route::get('reservationMessages', 'messagesController@getMessages_reserve');
 
 //Route::get('/contact', 'pagesController@getContact');
+
+Route::resource('message', 'MessageController');

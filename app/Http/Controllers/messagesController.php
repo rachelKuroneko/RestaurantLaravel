@@ -15,19 +15,29 @@ class messagesController extends Controller
     		'subject' => 'required'
     		]);
 
+        // Shortcut way of creating a new model 
+        $input = $request->all();
+        $message = Message::create($input);
+
+        // Fill method is using to write edit 
+        // $messageThree = Message::find(3);
+        // $messageThree->fill($input);
+        // $messageThree->save();
+
+
     	//return 'SUCCESS';
 
     	//Create new Message (model name)
     	//Create new message variable 
 
-    	$message = new Message;
-    	$message->name = $request->input('name');
-    	$message->email = $request->input('email');
-    	$message->subject = $request->input('subject');
-    	$message->message = $request->input('message');
+    	// $message = new Message;
+    	// $message->name = $request->input('name');
+    	// $message->email = $request->input('email');
+    	// $message->subject = $request->input('subject');
+    	// $message->message = $request->input('message');
 
-    	// Save the message
-    	$message->save();
+    	// // Save the message
+    	// $message->save();
 
     	// Redirect
     	return redirect('/')->with('success', 'Message Sent');
@@ -45,23 +55,26 @@ class messagesController extends Controller
     		'subject' => 'required'
     		]);
 
+        $input = $request->all();
+        $reservation = Reservation::create($input);
+
     	//return 'SUCCESS';
 
     	//Create new Reservation (model name)
     	//Create new Reservation variable 
 
-    	$reservation = new Reservation;
-    	$reservation->first_name = $request->input('first_name');
-    	$reservation->last_name = $request->input('last_name');
-    	$reservation->state = $request->input('state');
-    	$reservation->datepicker = $request->input('datepicker');
-    	$reservation->phone = $request->input('phone');
-    	$reservation->guest = $request->input('guest');
-    	$reservation->email = $request->input('email');
-    	$reservation->subject = $request->input('subject');
+    	// $reservation = new Reservation;
+    	// $reservation->first_name = $request->input('first_name');
+    	// $reservation->last_name = $request->input('last_name');
+    	// $reservation->state = $request->input('state');
+    	// $reservation->datepicker = $request->input('datepicker');
+    	// $reservation->phone = $request->input('phone');
+    	// $reservation->guest = $request->input('guest');
+    	// $reservation->email = $request->input('email');
+    	// $reservation->subject = $request->input('subject');
 
     	// Save the message
-    	$reservation->save();
+    	// $reservation->save();
 
     	// Redirect
     	return redirect('/')->with('success', 'Message Sent');
